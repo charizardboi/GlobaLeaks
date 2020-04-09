@@ -99,9 +99,9 @@ elif [ "$GLTEST" = "build_and_install" ]; then
     sudo su -c 'echo "deb http://archive.ubuntu.com/ubuntu bionic main universe" > /tmp/globaleaks_chroot/etc/apt/sources.list'
     sudo su -c 'echo "deb http://archive.ubuntu.com/ubuntu bionic-updates main universe" >> /tmp/globaleaks_chroot/etc/apt/sources.list'
   elif [ $DISTRIBUTION = "focal" ]; then
-    sudo debootstrap --arch=amd64 bionic "$chroot" http://archive.ubuntu.com/ubuntu/
-    sudo su -c 'echo "deb http://archive.ubuntu.com/ubuntu focal main universe" > /tmp/globaleaks_chroot/etc/apt/sources.list'
-    sudo su -c 'echo "deb http://archive.ubuntu.com/ubuntu focal-updates main universe" >> /tmp/globaleaks_chroot/etc/apt/sources.list'
+    sudo debootstrap --arch=amd64 eoan "$chroot" http://archive.ubuntu.com/ubuntu/
+    sudo su -c 'echo "deb http://archive.ubuntu.com/ubuntu eoan main universe" > /tmp/globaleaks_chroot/etc/apt/sources.list'
+    sudo su -c 'echo "deb http://archive.ubuntu.com/ubuntu eoan-updates main universe" >> /tmp/globaleaks_chroot/etc/apt/sources.list'
   fi
 
   if [ $DISTRIBUTION = "bionic" ]; then
