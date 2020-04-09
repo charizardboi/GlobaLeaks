@@ -10,9 +10,15 @@ sudo apt-get -y update
 
 sudo apt-get -y install curl git debhelper devscripts dh-apparmor dh-python python3-dev python3-pip python3-setuptools python3-sphinx
 
+nodedistro=$distro
+if [ "$distro" = "focal" ]; then
+    nodedistro="eoan"
+fi
+
 curl -sSL https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-key add -
-echo "deb https://deb.nodesource.com/node_12.x $distro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
-echo "deb-src https://deb.nodesource.com/node_12.x $distro main" | sudo tee -a /etc/apt/sources.list.d/nodesource.list
+echo "deb https://deb.nodesource.com/node_12.x $nodedistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
+echo "deb-src https://deb.nodesource.com/node_12.x $nodedistro main" | sudo tee -a /etc/apt/sources.list.d/nodesource.list
+
 
 sudo apt-get update
 sudo apt-get -y install nodejs
