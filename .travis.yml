@@ -25,6 +25,10 @@ matrix:
       dist: bionc
       python: "3.6"
 
+    - env: GLTEST='build_and_install' DISTRIBUTION='focal'
+      dist: bionic
+      python: "3.6"
+
     - env: GLTEST='docker'
       dist: bionic
       python: "3.6"
