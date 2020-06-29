@@ -132,7 +132,7 @@ controller("QuestionaireOperationsCtrl",
 
     if ($scope.operation === "duplicate") {
       $http.post(
-        "admin/questionnaires/duplicate",
+        "api/admin/questionnaires/duplicate",
         {
           questionnaire_id: $scope.questionnaire.id,
           new_name: $scope.duplicate_questionnaire.name

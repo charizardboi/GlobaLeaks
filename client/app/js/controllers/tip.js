@@ -111,7 +111,7 @@ GLClient.controller("TipCtrl",
         $scope.submission._submission = tip;
 
         $scope.provideIdentityInformation = function(identity_field_id, identity_field_answers) {
-          return $http.post("wbtip/" + $scope.tip.id + "/provideidentityinformation",
+          return $http.post("api/api/wbtip/" + $scope.tip.id + "/provideidentityinformation",
                             {"identity_field_id": identity_field_id, "identity_field_answers": identity_field_answers}).
               then(function(){
                 $route.reload();
@@ -307,7 +307,7 @@ controller("IdentityAccessRequestCtrl",
   $scope.confirm = function () {
     $uibModalInstance.close();
 
-    return $http.post("rtip/" + tip.id + "/identityaccessrequests", {"request_motivation": $scope.request_motivation}).
+    return $http.post("api/rtip/" + tip.id + "/identityaccessrequests", {"request_motivation": $scope.request_motivation}).
         then(function(){
           $route.reload();
         });

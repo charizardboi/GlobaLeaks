@@ -396,7 +396,7 @@ controller("AdditionalQuestionnaireCtrl",
       return;
     }
 
-    return $http.post("wbtip/" + $scope.tip.id + "/update",
+    return $http.post("api/wbtip/" + $scope.tip.id + "/update",
                       {"cmd": "additional_questionnaire", "answers": $scope.answers}).
         then(function(){
           $route.reload();
